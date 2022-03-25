@@ -60,14 +60,14 @@
 							</form:form>
 						</c:when>
 						<c:when test="${loggedInUser.id != book.owner.id && borrower.id == null}">
-							<form:form action="books/borrow/${book.id}" modelAttribute="unborrowedBooks" method="put">
+							<%-- <form:form action="books/borrow/${book.id}" modelAttribute="unborrowedBooks" method="put">
 								<form:hidden path="title" value="${book.title}"/>
 								<form:hidden path="author" value="${book.author}"/>
 								<form:hidden path="thoughts" value="${book.thoughts}"/>
 								<form:hidden path="owner" value="${book.owner.id}"/>
 								<input type ="submit" value="Borrow" class="btn btn-success">
-							</form:form>
-							<a href="books/add/${book.id}" class="btn btn-dark mx-1">Borrow 2</a>
+							</form:form> --%>
+							<a href="books/add/${book.id}" class="btn btn-success mx-1">Borrow</a>
 						</c:when>
 						<c:otherwise>
 							<strong>BORROWED</strong>
@@ -98,14 +98,14 @@
 				<td>${book.author}</td>
 				<td>${book.owner.userName}</td>
 				<td class="d-flex">
-					<form:form action="books/return/${book.id}" modelAttribute="unborrowedBooks" method="put">
+					<%-- <form:form action="books/return/${book.id}" modelAttribute="unborrowedBooks" method="put">
 						<form:hidden path="title" value="${book.title}"/>
 						<form:hidden path="author" value="${book.author}"/>
 						<form:hidden path="thoughts" value="${book.thoughts}"/>
 						<form:hidden path="owner" value="${book.owner.id}"/>
 						<input type ="submit" value="Return" class="btn btn-success">
-					</form:form>
-					<a href="books/remove/${book.id}" class="btn btn-dark mx-1">Return 2</a>
+					</form:form> --%>
+					<a href="books/remove/${book.id}" class="btn btn-success mx-1">Return</a>
 				</td>
 			</tr>
 			</c:if>
